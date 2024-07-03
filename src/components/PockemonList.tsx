@@ -5,7 +5,7 @@ import { Pokemon } from "../types/pokemon";
 import PokemonCard from "./PokemonCard";
 
 const getPokemons = async () => {
-  const response = await fetch("/api/pokemons");
+  const response = await fetch("http://localhost:3000/api/pokemons");
   // next api 호출방법
   return response.json();
 };
@@ -25,18 +25,11 @@ function PockemonList() {
 
   return (
     <>
-      <ul>
+      <ul className="grid grid-cols-5 w-[90vw] my-[100px] mx-auto gap-[10px]">
         {data.map((pokemon) => {
           return <PokemonCard key={pokemon.korean_name} pokemon={pokemon} />;
         })}
       </ul>
-      {/* {data.map((card) => {
-        return <div>{card.korean_name}</div>;
-      })} */}
-      {/* <PokemonCard
-      key={
-      }
-      /> */}
     </>
   );
 }
