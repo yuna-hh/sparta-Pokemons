@@ -5,9 +5,12 @@ import { Pokemon } from "../types/pokemon";
 import PokemonCard from "./PokemonCard";
 
 const getPokemons = async () => {
-  const response = await fetch("http://localhost:3000/api/pokemons");
+  const response = await fetch("/api/pokemons");
+  //client 컴포넌트여서 어떤 경로인지 알고있음
   // next api 호출방법
-  return response.json();
+  // return response.json();
+  const data: Pokemon[] = await response.json();
+  return data;
 };
 // 나중에 분리도 가능! ts 파일로 만들기
 

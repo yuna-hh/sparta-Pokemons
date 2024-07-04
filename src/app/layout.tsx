@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+// import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Provider from "./Provider"; //import는 자식 사용한 곳이 부모
+import { Metadata } from "next";
 
 const inter = Inter({ subsets: ["latin"] });
 
